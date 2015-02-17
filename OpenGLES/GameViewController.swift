@@ -8,7 +8,7 @@
 
 /*
 NOTE: The OpenGL ES option is still in progress for Swift.
-
+*/
 import GLKit
 import OpenGLES
 
@@ -383,4 +383,4 @@ let gCubeVertexData: GLfloat[] = [
     -0.5, 0.5, -0.5,        0.0, 0.0, -1.0
 */
 ]
-*/
+

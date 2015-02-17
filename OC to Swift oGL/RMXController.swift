@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 import CoreMotion
-
+//let motionManager: RMXController = RMXController()
 
 class RMXController : CMMotionManager {//: UIAccelerometerDelegate {
     
-    var gvc: GameViewController?
+    var gvc: RMXWorld?
     override init(){
         gvc = nil
         super.init()
@@ -39,7 +39,8 @@ class RMXController : CMMotionManager {//: UIAccelerometerDelegate {
 }
 
 
-protocol RMXInteface {
+protocol RMXInteface  {
     var effectedByAccelerometer: Bool { get set }
-    func interpretAccelerometerData(data:CMAccelerometerData?)
+    var gyro: RMXGyro? { get set }
+    //func interpretAccelerometerData(data:CMAccelerometerData?)
 }

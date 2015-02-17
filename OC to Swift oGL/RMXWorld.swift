@@ -7,7 +7,8 @@
 //
 
 import Foundation
-
+import UIKit
+import SceneKit
 
 
 protocol _RMXWorld : RMXNamed {
@@ -27,27 +28,22 @@ class RMXWorld : UIViewController, _RMXWorld {
     let W_FRICTION = 1.1
     var name, observerName: String
     var sprites: [RMXSprite]
-    required init(name: String) {
-        self.name = name        
-        observerName = "Main Observer"
-        sprites = [RMXSprite]()
-        sprites.append(RMXSprite(name:observerName))
-        sprites.first?.setEffectedByAccelerometer(set: true)
-        super.init()
-
-    }
-
+    
+    var scene: SCNScene?
     required init(coder aDecoder: NSCoder) {
-        self.name = ""
+        self.name = "World"
         observerName = "Main Observer"
         sprites = [RMXSprite]()
-        sprites.append(RMXSprite(name:observerName))
         super.init(coder: aDecoder)
+        //motionManager.gvc = self
+        //motionManager.gvc = self
+        sprites.append(RMXSprite(name:observerName,worldView: self,coder: aDecoder))
+        NSLog("WORLD SAFE")
 //        fatalError("init(coder:) has not been implemented")
     }
 
     
-    func observer()->RMXSprite? {
+    var observer: RMXSprite? {
         return sprites.first
     }
     
@@ -63,7 +59,7 @@ class RMXWorld : UIViewController, _RMXWorld {
 func objectWithName(name: String)->RMXSprite {
         //observerName = name
        // sprites.
-    return RMXSprite(name: name)
+    return RMXSprite(name: name, worldView: self)
     }
                 
     func insert(object: RMXSprite){
@@ -73,13 +69,13 @@ func objectWithName(name: String)->RMXSprite {
     
     func update() {
         for sprite in sprites {
-            sprite.animate()
+            sprite.update()
             //println(sprite)
         }
 //        if UIDeviceOrientation == UIDeviceOrientation.Portrait {
 //                println("Hello, Portrate")
 //        }
-        
+        RMX.printLog()
     }
     
         

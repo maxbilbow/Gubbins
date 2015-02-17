@@ -17,6 +17,7 @@ import CoreMotion
 //}
 class RMXSprite : NSObject, RMXObserver , RMXInteface{
     
+    var gyro: RMXGyro?
     var effectedByAccelerometer: Bool
     var name: String
     var position, velocity,acceleration, forwardVector, upVector, leftVector, forwardV, upV, leftV, anchor, itemPosition: [Float]
@@ -24,13 +25,14 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
     var accelerationRate, speedLimit,ground,rotationSpeed,jumpStrength,armLength, reach: Float
     var limitSpeed, drift: Bool
     var origin, itemInHand: RMXSprite?
+    var frozen = false
    
     //@property Mouse *mouse
     //@property Particle * item
   
-    
-    required init(name: String) {
-        position = [ 0, 0, 0 ]
+    var worldView: RMXWorld?
+    required init(name: String, worldView: RMXWorld?, coder aDecoder: NSCoder? = nil) {
+        position = [ 0, 0, 15 ]
         //position = GLKVector3Make(0, 0, 0)
         velocity = [ 0,0,0 ]
         acceleration = [ 0, 0, 0 ]
@@ -60,7 +62,10 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
         //self.ground=1
         self.name = name
         self.effectedByAccelerometer = true
+        self.worldView = worldView
         super.init()
+        self.gyro = RMXGyro(parent: self)
+        
     }
     
     
@@ -77,7 +82,7 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
     //  accelerate()
     //       accelerate(GLKVector3Make(0,velocity*accelerationRate,0))
     }
-    
+
     func accelerateLeft(v: Float)
     {
     acceleration[0] = v * accelerationRate
@@ -118,7 +123,7 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
     func accelerate()
     {
     //acceleration.z =
-    rmxDebugger.add(self.name, message:"FV: %f, LV: %f, UV: %f")
+        RMXLog(self, "FV: %f, LV: %f, UV: %f")
     acceleration[1] -= physics.gravity
     self.setVelocity(acceleration) //Need to calculate this
     
@@ -131,7 +136,7 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
                 //[rmxDebugger add:3 n:self.name t:[NSString stringWithFormat:@"speed%i = %f",i,[self velocity].v[i]]]
                 velocity[i] = -speedLimit
             } else {
-                rmxDebugger.add(self.name, message:"speed%i OK: %f ,i,[self velocity].v[i]")
+                RMXLog(self,"speed%i OK: %f ,i,[self velocity].v[i]")
             }
         }
     }
@@ -179,15 +184,16 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
     return true
     }
     
-    func animate()
+    func update()
     {
-        if self.effectedByAccelerometer {
-            interpretAccelerometerData(motionManager.accelerometerData?)
+        if frozen { stop(); return }
+        if (self.effectedByAccelerometer) && (self.gyro? != nil) {
+            self.gyro?.interpretAccelerometerData()
         }
     self.accelerate()
     self.leftVector = RMXVector3CrossProduct(self.forwardVector,self.upVector)
         if !self.translate() {
-                rmxDebugger.add(self.name, message:"no movement!")
+                RMXLog(self,"no movement!")
         }
         self.manipulateItems()
     //[rmxDebugger add:2 n:self.name t:[NSString stringWithFormat:@"%@ POSITION: %p | PX: %f, PY: %f, PZ: %f",self.name,[self pMem],[self position].x,[self position].y,[self position].z ]]
@@ -249,6 +255,7 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
     
     }
     
+
     
     
     func addGravity(g:Float)
@@ -330,20 +337,19 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
     
     
    override var description: String {
-        return "      EYE x\(getEye()[0]), y\(getEye()[1]), z\(getEye()[2])\n   CENTRE x\(getCenter()[0]), y\(getCenter()[1]), z\(getCenter()[2])\n      UP: x\(getUp()[0]), y\(getUp()[1]), z\(getUp()[2])"
+        if (RMX.debugging) {
+            let dp:String = "03.0"
+            RMXLog("--- SPRITE DATA",
+                "      EYE: x\(getEye()[0].toData(dp: dp)), y\(getEye()[1].toData(dp: dp)), z\(getEye()[2].toData(dp: dp))",
+                "   CENTRE: x\(getCenter()[0].toData(dp: dp)), y\(getCenter()[1].toData(dp: dp)), z\(getCenter()[2].toData(dp: dp))",
+                "       UP: x\(getUp()[0].toData(dp: dp)), y\(getUp()[1].toData(dp: dp)), z\(getUp()[2].toData(dp: dp))"
+            )
+            return ""
+        }
+    
+        return "      EYE: x\(getEye()[0].toData()), y\(getEye()[1].toData()), z\(getEye()[2].toData())\n   CENTRE: x\(getCenter()[0].toData()), y\(getCenter()[1].toData()), z\(getCenter()[2].toData())\n       UP: x\(getUp()[0].toData()), y\(getUp()[1].toData()), z\(getUp()[2].toData())"
     }
 
-    func interpretAccelerometerData(data:CMAccelerometerData?){
-        if (data != nil) {
-            self.setVelocity([Float(data!.acceleration.x), Float(data!.acceleration.y),Float(data!.acceleration.z) ])
-//            self.accelerateForward(Float(data!.acceleration.z))
-//            self.accelerateLeft(Float(data!.acceleration.x))
-//            self.accelerateUp(Float(data!.acceleration.y))
-            println("Accelerometer \nx:\(round(data!.acceleration.x))\n y:\(round(data!.acceleration.y))\n z:\(round(data!.acceleration.z))")
-
-        }
-        
-            }
     
     func setEffectedByAccelerometer(set: Bool=true){
         self.effectedByAccelerometer=set
@@ -352,5 +358,7 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
     func isEffectedByAccelerometer() -> Bool{
         return self.effectedByAccelerometer
     }
+    
+    
     
 }

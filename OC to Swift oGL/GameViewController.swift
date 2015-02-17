@@ -13,8 +13,8 @@ import CoreMotion
 
 let MaxBuffers = 3
 let ConstantBufferSize = 1024*1024
-let rmxDebugger = RMXDebugger()
-let motionManager: RMXController = RMXController()
+//let rmxDebugger = RMXDebugger()
+
 let vertexData:[Float] =
 [
     -1.0, -1.0, 0.0, 1.0,
@@ -69,7 +69,7 @@ class GameViewController: RMXWorld {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        motionManager.gvc = self
+        
         //var r: RMXSprite = RMXSprite(name:"hello")
         metalLayer.device = device
         metalLayer.pixelFormat = .BGRA8Unorm
@@ -205,11 +205,11 @@ class GameViewController: RMXWorld {
         vData.initializeFrom(vertexData)
         var xx, yy, zz: Double
         xx=0;yy=0;zz=0
-        if (motionManager.accelerometerData != nil) {
+        if (false) { //motionManager.accelerometerData != nil) {
             
-            xx = motionManager.accelerometerData.acceleration.x
-            yy = motionManager.accelerometerData.acceleration.y
-            zz = motionManager.accelerometerData.acceleration.z
+//            xx = motionManager.accelerometerData.acceleration.x
+//            yy = motionManager.accelerometerData.acceleration.y
+//            zz = motionManager.accelerometerData.acceleration.z
             // println("here")
             // view.backgroundColor = UIColor.magentaColor()
         }

@@ -11,12 +11,12 @@ import SceneKit
 
 protocol RMXNamed {
     var name: String { get }
-    init(name:String)
+    //init(name:String)
 }
 protocol RMXNode : RMXNamed{
         var position: [Float] { get set }
         var velocity: [Float] { get set }
-        func animate()
+        func update()
 }
 protocol RMXSimpleParticle : RMXNode, RMXNamed {
     

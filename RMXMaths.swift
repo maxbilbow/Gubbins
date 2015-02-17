@@ -221,3 +221,7 @@ func RMXVectorNegate(inout v: [Float]) {
     }
 }
 
+func RMXVector3Make(v: [Float]) -> SCNVector3{
+    return SCNVector3Make(v[0], v[1], v[2])
+}
+

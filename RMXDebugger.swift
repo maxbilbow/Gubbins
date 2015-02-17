@@ -15,47 +15,21 @@ import Foundation
 //    //class func debug(key: String, message: String)
 //    
 //}
-class RMXTester  {
+struct RMX  {
     //let tester: UnsafeMutablePointer<RMX.Debugger> = UnsafeMutablePointer.alloc(sizeof(RMX.Debugger.self))
     
-    class var debugger: RMXDebugger {
-        return rmxDebugger
-    }
-    
-    internal var label: String = ""
-    
-    init(label: String = "Unnamed Class"){
-        self.label = label
-    }
-    
-    func debug(message: String){
-        rmxDebugger.add(self.label, message: message)
-    }
-    
-    
-    
-}
-
-
-
-class RMXDebugger : RMXTester {
-    var no_checks = 10
-    var tog = 0
-    var lastCheck = ""
-    
+    static var tog = 0
+    static var lastCheck = ""
+    static var logs: [String] = Array<String>()
     //bool * print = new bool[10];
     
-    var checks: [ String: String ]//new string[no_checks];
-    var monitor: [String]
-    var debugging = false
+    static var checks: [ String: String ] = [ "ERROR":"N/A", "Debug":"N/A"]
+    static var monitor: [ String ] = [ "ERROR" , "Debug" ]
+    static var debugging = true
     //GLKVector2 win = new GLKVector2(0,0);
     
-    init(){
-        checks = [ "ERROR":"N/A", "Debug":"N/A"]
-        monitor = [ "ERROR" , "Debug" ]
-    }
     
-    func feedback(print: [String:String])->String{
+    static func feedback(print: [String:String])->String{
         var str: String = ""
         for (kind, report) in print{
             
@@ -68,16 +42,16 @@ class RMXDebugger : RMXTester {
         return str
     }
     
-    func print(){
+    static func print(){
         let print = self.feedback(checks)
         if (print != ""){
             println(print)
         }
     }
     
+
     
-    
-    func cycle(dir: Int){
+    static func cycle(dir: Int){
         tog += dir
         if (tog>=monitor.count) {
             tog=0
@@ -86,7 +60,7 @@ class RMXDebugger : RMXTester {
         }
     }
     
-    func add(key: String, message: String) {
+    static func add(key: String, message: String) {
         if (nil == checks.indexForKey(key)){
             checks.updateValue(message, forKey: key)
             monitor.append(key)
@@ -97,9 +71,49 @@ class RMXDebugger : RMXTester {
         
     }
     
-    class func debug(key: String, message: String = "TODO"){
-        rmxDebugger.add(key, message: message)
+    static func debug(key: String, message: String = "TODO"){
+        add(key, message: message)
+    }
+    
+    
+   
+    static func log(log: String){
+        self.logs.append(log)
+    }
+    
+    static func printLog() {
+        
+        logs.append(feedback(checks))
+        var output: String = "\n"//log
+        var longest:Int = 0
+        for log in logs {
+            if log.utf16Count > longest {
+                longest = log.utf16Count
+            }
+        }
+        for log in logs {
+            let diff:Int = longest - log.utf16Count
+            let spacer: String = log.hasPrefix("---") ? "-" : " "
+            for (var i:Int = 0; i<diff;++i){
+                output += spacer
+            }
+            output += log
+            output += "\n"
+        }
+        
+        NSLog(output)
+        logs.removeAll(keepCapacity: true)
     }
 }
 
+func RMXLog(logs: String...) {
+    for log in logs {
+        RMX.log(log)
+    }
+}
 
+func RMXLog(object: RMXNamed, message: String...) {
+    for log in message {
+        RMX.add(object.name, message: log)
+    }
+}

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5017F3861A93932400E5BFBF /* RMXValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017F3851A93932400E5BFBF /* RMXValue.swift */; };
+		5017F3871A93BF6800E5BFBF /* RMXValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017F3851A93932400E5BFBF /* RMXValue.swift */; };
+		5017F3881A93BF6800E5BFBF /* RMXValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017F3851A93932400E5BFBF /* RMXValue.swift */; };
+		5017F3891A93BF6900E5BFBF /* RMXValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5017F3851A93932400E5BFBF /* RMXValue.swift */; };
+		506022F31A9341BE0099950D /* RMXGyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506022F21A9341BE0099950D /* RMXGyro.swift */; };
+		506022F41A9343230099950D /* RMXGyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506022F21A9341BE0099950D /* RMXGyro.swift */; };
+		506022F51A9343240099950D /* RMXGyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506022F21A9341BE0099950D /* RMXGyro.swift */; };
+		506022F61A9343250099950D /* RMXGyro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506022F21A9341BE0099950D /* RMXGyro.swift */; };
 		50639E8B1A92BE4C00A94E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50639E8A1A92BE4C00A94E5C /* AppDelegate.swift */; };
 		50639E8D1A92BE4C00A94E5C /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 50639E8C1A92BE4C00A94E5C /* Shader.fsh */; };
 		50639E8F1A92BE4C00A94E5C /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 50639E8E1A92BE4C00A94E5C /* Shader.vsh */; };
@@ -20,8 +28,38 @@
 		50639EAF1A92BE7400A94E5C /* RMXDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6831A928B0300E287A8 /* RMXDebugger.swift */; };
 		50639EB01A92BE7400A94E5C /* RMXMaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BF1A924D12006F7DFF /* RMXMaths.swift */; };
 		50639EB11A92BE7400A94E5C /* RMXWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37B51A9242D2006F7DFF /* RMXWorld.swift */; };
-		50639EB21A92BE7400A94E5C /* RMXParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BD1A924BF8006F7DFF /* RMXParticle.swift */; };
+		50639EB21A92BE7400A94E5C /* RMXParticleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BD1A924BF8006F7DFF /* RMXParticleProtocols.swift */; };
 		50639EB31A92BE7400A94E5C /* RMXPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37C31A926C56006F7DFF /* RMXPhysics.swift */; };
+		50639EBE1A92C00000A94E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50639EBD1A92C00000A94E5C /* AppDelegate.swift */; };
+		50639EC01A92C00100A94E5C /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 50639EBF1A92C00100A94E5C /* art.scnassets */; };
+		50639EC21A92C00100A94E5C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50639EC11A92C00100A94E5C /* GameViewController.swift */; };
+		50639EC51A92C00100A94E5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50639EC31A92C00100A94E5C /* Main.storyboard */; };
+		50639EC71A92C00100A94E5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50639EC61A92C00100A94E5C /* Images.xcassets */; };
+		50639ECA1A92C00100A94E5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50639EC81A92C00100A94E5C /* LaunchScreen.xib */; };
+		50639ED61A92C00100A94E5C /* SKEENkitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50639ED51A92C00100A94E5C /* SKEENkitTests.swift */; };
+		50639EDD1A92C0C900A94E5C /* RMXSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37C11A925BFD006F7DFF /* RMXSprite.swift */; };
+		50639EDE1A92C0C900A94E5C /* RMXController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6861A9291CD00E287A8 /* RMXController.swift */; };
+		50639EDF1A92C0C900A94E5C /* RMXDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6831A928B0300E287A8 /* RMXDebugger.swift */; };
+		50639EE01A92C0C900A94E5C /* RMXMaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BF1A924D12006F7DFF /* RMXMaths.swift */; };
+		50639EE11A92C0C900A94E5C /* RMXWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37B51A9242D2006F7DFF /* RMXWorld.swift */; };
+		50639EE21A92C0C900A94E5C /* RMXParticleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BD1A924BF8006F7DFF /* RMXParticleProtocols.swift */; };
+		50639EE31A92C0C900A94E5C /* RMXPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37C31A926C56006F7DFF /* RMXPhysics.swift */; };
+		50639EED1A92C51B00A94E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50639EEC1A92C51B00A94E5C /* AppDelegate.swift */; };
+		50639EEF1A92C51B00A94E5C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 50639EEE1A92C51B00A94E5C /* GameScene.sks */; };
+		50639EF11A92C51B00A94E5C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50639EF01A92C51B00A94E5C /* GameScene.swift */; };
+		50639EF31A92C51B00A94E5C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50639EF21A92C51B00A94E5C /* GameViewController.swift */; };
+		50639EF61A92C51B00A94E5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50639EF41A92C51B00A94E5C /* Main.storyboard */; };
+		50639EF81A92C51B00A94E5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50639EF71A92C51B00A94E5C /* Images.xcassets */; };
+		50639EFB1A92C51B00A94E5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50639EF91A92C51B00A94E5C /* LaunchScreen.xib */; };
+		50639F071A92C51B00A94E5C /* SPReeeeEEETKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50639F061A92C51B00A94E5C /* SPReeeeEEETKitTests.swift */; };
+		50639F0E1A92C52E00A94E5C /* RMXSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37C11A925BFD006F7DFF /* RMXSprite.swift */; };
+		50639F0F1A92C52E00A94E5C /* RMXController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6861A9291CD00E287A8 /* RMXController.swift */; };
+		50639F101A92C52E00A94E5C /* RMXDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6831A928B0300E287A8 /* RMXDebugger.swift */; };
+		50639F111A92C52E00A94E5C /* RMXMaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BF1A924D12006F7DFF /* RMXMaths.swift */; };
+		50639F121A92C52E00A94E5C /* RMXWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37B51A9242D2006F7DFF /* RMXWorld.swift */; };
+		50639F131A92C52E00A94E5C /* RMXParticleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BD1A924BF8006F7DFF /* RMXParticleProtocols.swift */; };
+		50639F141A92C52E00A94E5C /* RMXPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37C31A926C56006F7DFF /* RMXPhysics.swift */; };
+		50639F1F1A92C9C800A94E5C /* kernal.c in Sources */ = {isa = PBXBuildFile; fileRef = 50639F1E1A92C9C800A94E5C /* kernal.c */; };
 		50BEB6841A928B0300E287A8 /* RMXDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6831A928B0300E287A8 /* RMXDebugger.swift */; };
 		50BEB6851A928C9000E287A8 /* RMXWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37B51A9242D2006F7DFF /* RMXWorld.swift */; };
 		50BEB6871A9291CD00E287A8 /* RMXController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6861A9291CD00E287A8 /* RMXController.swift */; };
@@ -37,7 +75,7 @@
 		50DC37B81A924A59006F7DFF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50DC37B71A924A59006F7DFF /* QuartzCore.framework */; };
 		50DC37BA1A924A62006F7DFF /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50DC37B91A924A62006F7DFF /* Metal.framework */; };
 		50DC37BC1A924A6A006F7DFF /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50DC37BB1A924A6A006F7DFF /* GLKit.framework */; };
-		50DC37BE1A924BF8006F7DFF /* RMXParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BD1A924BF8006F7DFF /* RMXParticle.swift */; };
+		50DC37BE1A924BF8006F7DFF /* RMXParticleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BD1A924BF8006F7DFF /* RMXParticleProtocols.swift */; };
 		50DC37C01A924D12006F7DFF /* RMXMaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BF1A924D12006F7DFF /* RMXMaths.swift */; };
 		50DC37C21A925BFD006F7DFF /* RMXSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37C11A925BFD006F7DFF /* RMXSprite.swift */; };
 		50DC37C41A926C56006F7DFF /* RMXPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37C31A926C56006F7DFF /* RMXPhysics.swift */; };
@@ -51,6 +89,20 @@
 			remoteGlobalIDString = 50639E851A92BE4C00A94E5C;
 			remoteInfo = OpenGLES;
 		};
+		50639ED01A92C00100A94E5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50DC37811A923D85006F7DFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50639EB81A92C00000A94E5C;
+			remoteInfo = SKEENkit;
+		};
+		50639F011A92C51B00A94E5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50DC37811A923D85006F7DFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50639EE71A92C51B00A94E5C;
+			remoteInfo = SPReeeeEEETKit;
+		};
 		50DC37A11A923D85006F7DFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 50DC37811A923D85006F7DFF /* Project object */;
@@ -61,6 +113,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5017F3851A93932400E5BFBF /* RMXValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMXValue.swift; sourceTree = "<group>"; };
+		506022F21A9341BE0099950D /* RMXGyro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMXGyro.swift; sourceTree = "<group>"; };
 		50639E861A92BE4C00A94E5C /* OpenGLES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50639E891A92BE4C00A94E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50639E8A1A92BE4C00A94E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +127,32 @@
 		50639E9E1A92BE4C00A94E5C /* OpenGLESTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGLESTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50639EA31A92BE4C00A94E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50639EA41A92BE4C00A94E5C /* OpenGLESTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGLESTests.swift; sourceTree = "<group>"; };
+		50639EB91A92C00000A94E5C /* SKEENkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKEENkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50639EBC1A92C00000A94E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50639EBD1A92C00000A94E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		50639EBF1A92C00100A94E5C /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		50639EC11A92C00100A94E5C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		50639EC41A92C00100A94E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		50639EC61A92C00100A94E5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		50639EC91A92C00100A94E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		50639ECF1A92C00100A94E5C /* SKEENkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKEENkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50639ED41A92C00100A94E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50639ED51A92C00100A94E5C /* SKEENkitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKEENkitTests.swift; sourceTree = "<group>"; };
+		50639EE81A92C51B00A94E5C /* SPReeeeEEETKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPReeeeEEETKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50639EEB1A92C51B00A94E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50639EEC1A92C51B00A94E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		50639EEE1A92C51B00A94E5C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		50639EF01A92C51B00A94E5C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		50639EF21A92C51B00A94E5C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		50639EF51A92C51B00A94E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		50639EF71A92C51B00A94E5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		50639EFA1A92C51B00A94E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		50639F001A92C51B00A94E5C /* SPReeeeEEETKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPReeeeEEETKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50639F051A92C51B00A94E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50639F061A92C51B00A94E5C /* SPReeeeEEETKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPReeeeEEETKitTests.swift; sourceTree = "<group>"; };
+		50639F1A1A92C9C800A94E5C /* kernal.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kernal.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		50639F1D1A92C9C800A94E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50639F1E1A92C9C800A94E5C /* kernal.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kernal.c; sourceTree = "<group>"; };
 		50BEB6831A928B0300E287A8 /* RMXDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMXDebugger.swift; path = ../RMXDebugger.swift; sourceTree = "<group>"; };
 		50BEB6861A9291CD00E287A8 /* RMXController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMXController.swift; sourceTree = "<group>"; };
 		50DC37891A923D85006F7DFF /* OC to Swift oGL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OC to Swift oGL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +173,7 @@
 		50DC37B71A924A59006F7DFF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		50DC37B91A924A62006F7DFF /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		50DC37BB1A924A6A006F7DFF /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		50DC37BD1A924BF8006F7DFF /* RMXParticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMXParticle.swift; sourceTree = "<group>"; };
+		50DC37BD1A924BF8006F7DFF /* RMXParticleProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMXParticleProtocols.swift; sourceTree = "<group>"; };
 		50DC37BF1A924D12006F7DFF /* RMXMaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMXMaths.swift; path = ../RMXMaths.swift; sourceTree = "<group>"; };
 		50DC37C11A925BFD006F7DFF /* RMXSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMXSprite.swift; path = ../RMXSprite.swift; sourceTree = "<group>"; };
 		50DC37C31A926C56006F7DFF /* RMXPhysics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMXPhysics.swift; sourceTree = "<group>"; };
@@ -108,6 +188,41 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		50639E9B1A92BE4C00A94E5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639EB61A92C00000A94E5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639ECC1A92C00100A94E5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639EE51A92C51B00A94E5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639EFD1A92C51B00A94E5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639F161A92C9C800A94E5C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -182,10 +297,109 @@
 				50BEB6831A928B0300E287A8 /* RMXDebugger.swift */,
 				50DC37BF1A924D12006F7DFF /* RMXMaths.swift */,
 				50DC37B51A9242D2006F7DFF /* RMXWorld.swift */,
-				50DC37BD1A924BF8006F7DFF /* RMXParticle.swift */,
+				50DC37BD1A924BF8006F7DFF /* RMXParticleProtocols.swift */,
 				50DC37C31A926C56006F7DFF /* RMXPhysics.swift */,
+				506022F21A9341BE0099950D /* RMXGyro.swift */,
+				5017F3851A93932400E5BFBF /* RMXValue.swift */,
 			);
 			name = RMX;
+			path = "OC to Swift oGL";
+			sourceTree = "<group>";
+		};
+		50639EBA1A92C00000A94E5C /* SKEENkit */ = {
+			isa = PBXGroup;
+			children = (
+				50639EBD1A92C00000A94E5C /* AppDelegate.swift */,
+				50639EBF1A92C00100A94E5C /* art.scnassets */,
+				50639EC11A92C00100A94E5C /* GameViewController.swift */,
+				50639EC31A92C00100A94E5C /* Main.storyboard */,
+				50639EC61A92C00100A94E5C /* Images.xcassets */,
+				50639EC81A92C00100A94E5C /* LaunchScreen.xib */,
+				50639EBB1A92C00000A94E5C /* Supporting Files */,
+			);
+			path = SKEENkit;
+			sourceTree = "<group>";
+		};
+		50639EBB1A92C00000A94E5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50639EBC1A92C00000A94E5C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50639ED21A92C00100A94E5C /* SKEENkitTests */ = {
+			isa = PBXGroup;
+			children = (
+				50639ED51A92C00100A94E5C /* SKEENkitTests.swift */,
+				50639ED31A92C00100A94E5C /* Supporting Files */,
+			);
+			path = SKEENkitTests;
+			sourceTree = "<group>";
+		};
+		50639ED31A92C00100A94E5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50639ED41A92C00100A94E5C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50639EE91A92C51B00A94E5C /* SPReeeeEEETKit */ = {
+			isa = PBXGroup;
+			children = (
+				50639EEC1A92C51B00A94E5C /* AppDelegate.swift */,
+				50639EEE1A92C51B00A94E5C /* GameScene.sks */,
+				50639EF01A92C51B00A94E5C /* GameScene.swift */,
+				50639EF21A92C51B00A94E5C /* GameViewController.swift */,
+				50639EF41A92C51B00A94E5C /* Main.storyboard */,
+				50639EF71A92C51B00A94E5C /* Images.xcassets */,
+				50639EF91A92C51B00A94E5C /* LaunchScreen.xib */,
+				50639EEA1A92C51B00A94E5C /* Supporting Files */,
+			);
+			path = SPReeeeEEETKit;
+			sourceTree = "<group>";
+		};
+		50639EEA1A92C51B00A94E5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50639EEB1A92C51B00A94E5C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50639F031A92C51B00A94E5C /* SPReeeeEEETKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				50639F061A92C51B00A94E5C /* SPReeeeEEETKitTests.swift */,
+				50639F041A92C51B00A94E5C /* Supporting Files */,
+			);
+			path = SPReeeeEEETKitTests;
+			sourceTree = "<group>";
+		};
+		50639F041A92C51B00A94E5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50639F051A92C51B00A94E5C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50639F1B1A92C9C800A94E5C /* kernal */ = {
+			isa = PBXGroup;
+			children = (
+				50639F1E1A92C9C800A94E5C /* kernal.c */,
+				50639F1C1A92C9C800A94E5C /* Supporting Files */,
+			);
+			path = kernal;
+			sourceTree = "<group>";
+		};
+		50639F1C1A92C9C800A94E5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50639F1D1A92C9C800A94E5C /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		50DC37801A923D85006F7DFF = {
@@ -194,10 +408,16 @@
 				50DC37BB1A924A6A006F7DFF /* GLKit.framework */,
 				50DC37B91A924A62006F7DFF /* Metal.framework */,
 				50DC37B71A924A59006F7DFF /* QuartzCore.framework */,
+				50639EAC1A92BE6000A94E5C /* RMX */,
 				50DC378B1A923D85006F7DFF /* OC to Swift oGL */,
 				50DC37A31A923D85006F7DFF /* OC to Swift oGLTests */,
 				50639E871A92BE4C00A94E5C /* OpenGLES */,
 				50639EA11A92BE4C00A94E5C /* OpenGLESTests */,
+				50639EBA1A92C00000A94E5C /* SKEENkit */,
+				50639ED21A92C00100A94E5C /* SKEENkitTests */,
+				50639EE91A92C51B00A94E5C /* SPReeeeEEETKit */,
+				50639F031A92C51B00A94E5C /* SPReeeeEEETKitTests */,
+				50639F1B1A92C9C800A94E5C /* kernal */,
 				50DC378A1A923D85006F7DFF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -209,6 +429,11 @@
 				50DC37A01A923D85006F7DFF /* OC to Swift oGLTests.xctest */,
 				50639E861A92BE4C00A94E5C /* OpenGLES.app */,
 				50639E9E1A92BE4C00A94E5C /* OpenGLESTests.xctest */,
+				50639EB91A92C00000A94E5C /* SKEENkit.app */,
+				50639ECF1A92C00100A94E5C /* SKEENkitTests.xctest */,
+				50639EE81A92C51B00A94E5C /* SPReeeeEEETKit.app */,
+				50639F001A92C51B00A94E5C /* SPReeeeEEETKitTests.xctest */,
+				50639F1A1A92C9C800A94E5C /* kernal.kext */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,7 +445,6 @@
 				50DC378E1A923D85006F7DFF /* AppDelegate.swift */,
 				50DC37901A923D85006F7DFF /* GameViewController.swift */,
 				50DC37921A923D85006F7DFF /* Shaders.metal */,
-				50639EAC1A92BE6000A94E5C /* RMX */,
 				50DC37941A923D85006F7DFF /* Main.storyboard */,
 				50DC37971A923D85006F7DFF /* Images.xcassets */,
 				50DC37991A923D85006F7DFF /* LaunchScreen.xib */,
@@ -258,6 +482,16 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		50639F171A92C9C800A94E5C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		50639E851A92BE4C00A94E5C /* OpenGLES */ = {
 			isa = PBXNativeTarget;
@@ -293,6 +527,94 @@
 			productName = OpenGLESTests;
 			productReference = 50639E9E1A92BE4C00A94E5C /* OpenGLESTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		50639EB81A92C00000A94E5C /* SKEENkit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50639ED71A92C00100A94E5C /* Build configuration list for PBXNativeTarget "SKEENkit" */;
+			buildPhases = (
+				50639EB51A92C00000A94E5C /* Sources */,
+				50639EB61A92C00000A94E5C /* Frameworks */,
+				50639EB71A92C00000A94E5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SKEENkit;
+			productName = SKEENkit;
+			productReference = 50639EB91A92C00000A94E5C /* SKEENkit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		50639ECE1A92C00100A94E5C /* SKEENkitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50639EDA1A92C00100A94E5C /* Build configuration list for PBXNativeTarget "SKEENkitTests" */;
+			buildPhases = (
+				50639ECB1A92C00100A94E5C /* Sources */,
+				50639ECC1A92C00100A94E5C /* Frameworks */,
+				50639ECD1A92C00100A94E5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50639ED11A92C00100A94E5C /* PBXTargetDependency */,
+			);
+			name = SKEENkitTests;
+			productName = SKEENkitTests;
+			productReference = 50639ECF1A92C00100A94E5C /* SKEENkitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		50639EE71A92C51B00A94E5C /* SPReeeeEEETKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50639F081A92C51B00A94E5C /* Build configuration list for PBXNativeTarget "SPReeeeEEETKit" */;
+			buildPhases = (
+				50639EE41A92C51B00A94E5C /* Sources */,
+				50639EE51A92C51B00A94E5C /* Frameworks */,
+				50639EE61A92C51B00A94E5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SPReeeeEEETKit;
+			productName = SPReeeeEEETKit;
+			productReference = 50639EE81A92C51B00A94E5C /* SPReeeeEEETKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		50639EFF1A92C51B00A94E5C /* SPReeeeEEETKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50639F0B1A92C51B00A94E5C /* Build configuration list for PBXNativeTarget "SPReeeeEEETKitTests" */;
+			buildPhases = (
+				50639EFC1A92C51B00A94E5C /* Sources */,
+				50639EFD1A92C51B00A94E5C /* Frameworks */,
+				50639EFE1A92C51B00A94E5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50639F021A92C51B00A94E5C /* PBXTargetDependency */,
+			);
+			name = SPReeeeEEETKitTests;
+			productName = SPReeeeEEETKitTests;
+			productReference = 50639F001A92C51B00A94E5C /* SPReeeeEEETKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		50639F191A92C9C800A94E5C /* kernal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50639F201A92C9C800A94E5C /* Build configuration list for PBXNativeTarget "kernal" */;
+			buildPhases = (
+				50639F151A92C9C800A94E5C /* Sources */,
+				50639F161A92C9C800A94E5C /* Frameworks */,
+				50639F171A92C9C800A94E5C /* Headers */,
+				50639F181A92C9C800A94E5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = kernal;
+			productName = kernal;
+			productReference = 50639F1A1A92C9C800A94E5C /* kernal.kext */;
+			productType = "com.apple.product-type.kernel-extension";
 		};
 		50DC37881A923D85006F7DFF /* OC to Swift oGL */ = {
 			isa = PBXNativeTarget;
@@ -345,6 +667,23 @@
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = 50639E851A92BE4C00A94E5C;
 					};
+					50639EB81A92C00000A94E5C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					50639ECE1A92C00100A94E5C = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 50639EB81A92C00000A94E5C;
+					};
+					50639EE71A92C51B00A94E5C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					50639EFF1A92C51B00A94E5C = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 50639EE71A92C51B00A94E5C;
+					};
+					50639F191A92C9C800A94E5C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 					50DC37881A923D85006F7DFF = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -371,6 +710,11 @@
 				50DC379F1A923D85006F7DFF /* OC to Swift oGLTests */,
 				50639E851A92BE4C00A94E5C /* OpenGLES */,
 				50639E9D1A92BE4C00A94E5C /* OpenGLESTests */,
+				50639EB81A92C00000A94E5C /* SKEENkit */,
+				50639ECE1A92C00100A94E5C /* SKEENkitTests */,
+				50639EE71A92C51B00A94E5C /* SPReeeeEEETKit */,
+				50639EFF1A92C51B00A94E5C /* SPReeeeEEETKitTests */,
+				50639F191A92C9C800A94E5C /* kernal */,
 			);
 		};
 /* End PBXProject section */
@@ -389,6 +733,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		50639E9C1A92BE4C00A94E5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639EB71A92C00000A94E5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50639ECA1A92C00100A94E5C /* LaunchScreen.xib in Resources */,
+				50639EC71A92C00100A94E5C /* Images.xcassets in Resources */,
+				50639EC01A92C00100A94E5C /* art.scnassets in Resources */,
+				50639EC51A92C00100A94E5C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639ECD1A92C00100A94E5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639EE61A92C51B00A94E5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50639EFB1A92C51B00A94E5C /* LaunchScreen.xib in Resources */,
+				50639EF81A92C51B00A94E5C /* Images.xcassets in Resources */,
+				50639EEF1A92C51B00A94E5C /* GameScene.sks in Resources */,
+				50639EF61A92C51B00A94E5C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639EFE1A92C51B00A94E5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639F181A92C9C800A94E5C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -424,11 +811,13 @@
 				50639EAE1A92BE7400A94E5C /* RMXController.swift in Sources */,
 				50639EAF1A92BE7400A94E5C /* RMXDebugger.swift in Sources */,
 				50639E8B1A92BE4C00A94E5C /* AppDelegate.swift in Sources */,
+				5017F3871A93BF6800E5BFBF /* RMXValue.swift in Sources */,
+				506022F51A9343240099950D /* RMXGyro.swift in Sources */,
 				50639EB31A92BE7400A94E5C /* RMXPhysics.swift in Sources */,
 				50639EB11A92BE7400A94E5C /* RMXWorld.swift in Sources */,
 				50639EAD1A92BE7000A94E5C /* RMXSprite.swift in Sources */,
 				50639EB01A92BE7400A94E5C /* RMXMaths.swift in Sources */,
-				50639EB21A92BE7400A94E5C /* RMXParticle.swift in Sources */,
+				50639EB21A92BE7400A94E5C /* RMXParticleProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,20 +829,83 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50639EB51A92C00000A94E5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50639EC21A92C00100A94E5C /* GameViewController.swift in Sources */,
+				50639EDE1A92C0C900A94E5C /* RMXController.swift in Sources */,
+				50639EDF1A92C0C900A94E5C /* RMXDebugger.swift in Sources */,
+				50639EBE1A92C00000A94E5C /* AppDelegate.swift in Sources */,
+				5017F3881A93BF6800E5BFBF /* RMXValue.swift in Sources */,
+				506022F41A9343230099950D /* RMXGyro.swift in Sources */,
+				50639EE31A92C0C900A94E5C /* RMXPhysics.swift in Sources */,
+				50639EE11A92C0C900A94E5C /* RMXWorld.swift in Sources */,
+				50639EDD1A92C0C900A94E5C /* RMXSprite.swift in Sources */,
+				50639EE01A92C0C900A94E5C /* RMXMaths.swift in Sources */,
+				50639EE21A92C0C900A94E5C /* RMXParticleProtocols.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639ECB1A92C00100A94E5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50639ED61A92C00100A94E5C /* SKEENkitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639EE41A92C51B00A94E5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50639F121A92C52E00A94E5C /* RMXWorld.swift in Sources */,
+				50639F131A92C52E00A94E5C /* RMXParticleProtocols.swift in Sources */,
+				50639F101A92C52E00A94E5C /* RMXDebugger.swift in Sources */,
+				50639F0E1A92C52E00A94E5C /* RMXSprite.swift in Sources */,
+				50639EF11A92C51B00A94E5C /* GameScene.swift in Sources */,
+				50639EF31A92C51B00A94E5C /* GameViewController.swift in Sources */,
+				50639EED1A92C51B00A94E5C /* AppDelegate.swift in Sources */,
+				50639F141A92C52E00A94E5C /* RMXPhysics.swift in Sources */,
+				50639F0F1A92C52E00A94E5C /* RMXController.swift in Sources */,
+				5017F3891A93BF6900E5BFBF /* RMXValue.swift in Sources */,
+				506022F61A9343250099950D /* RMXGyro.swift in Sources */,
+				50639F111A92C52E00A94E5C /* RMXMaths.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639EFC1A92C51B00A94E5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50639F071A92C51B00A94E5C /* SPReeeeEEETKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50639F151A92C9C800A94E5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50639F1F1A92C9C800A94E5C /* kernal.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50DC37851A923D85006F7DFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506022F31A9341BE0099950D /* RMXGyro.swift in Sources */,
 				50DC37931A923D85006F7DFF /* Shaders.metal in Sources */,
 				50DC37911A923D85006F7DFF /* GameViewController.swift in Sources */,
 				50DC378F1A923D85006F7DFF /* AppDelegate.swift in Sources */,
-				50DC37BE1A924BF8006F7DFF /* RMXParticle.swift in Sources */,
+				50DC37BE1A924BF8006F7DFF /* RMXParticleProtocols.swift in Sources */,
 				50BEB6851A928C9000E287A8 /* RMXWorld.swift in Sources */,
 				50DC37B41A923E5A006F7DFF /* RattleOC.m in Sources */,
 				50DC37C41A926C56006F7DFF /* RMXPhysics.swift in Sources */,
 				50BEB6841A928B0300E287A8 /* RMXDebugger.swift in Sources */,
 				50DC37C01A924D12006F7DFF /* RMXMaths.swift in Sources */,
 				50DC37C21A925BFD006F7DFF /* RMXSprite.swift in Sources */,
+				5017F3861A93932400E5BFBF /* RMXValue.swift in Sources */,
 				50BEB6871A9291CD00E287A8 /* RMXController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +925,16 @@
 			isa = PBXTargetDependency;
 			target = 50639E851A92BE4C00A94E5C /* OpenGLES */;
 			targetProxy = 50639E9F1A92BE4C00A94E5C /* PBXContainerItemProxy */;
+		};
+		50639ED11A92C00100A94E5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50639EB81A92C00000A94E5C /* SKEENkit */;
+			targetProxy = 50639ED01A92C00100A94E5C /* PBXContainerItemProxy */;
+		};
+		50639F021A92C51B00A94E5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50639EE71A92C51B00A94E5C /* SPReeeeEEETKit */;
+			targetProxy = 50639F011A92C51B00A94E5C /* PBXContainerItemProxy */;
 		};
 		50DC37A21A923D85006F7DFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -494,6 +956,38 @@
 			isa = PBXVariantGroup;
 			children = (
 				50639E981A92BE4C00A94E5C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		50639EC31A92C00100A94E5C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50639EC41A92C00100A94E5C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		50639EC81A92C00100A94E5C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50639EC91A92C00100A94E5C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		50639EF41A92C51B00A94E5C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50639EF51A92C51B00A94E5C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		50639EF91A92C51B00A94E5C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50639EFA1A92C51B00A94E5C /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -572,6 +1066,159 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenGLES.app/OpenGLES";
+			};
+			name = Release;
+		};
+		50639ED81A92C00100A94E5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SKEENkit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		50639ED91A92C00100A94E5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SKEENkit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		50639EDB1A92C00100A94E5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SKEENkitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SKEENkit.app/SKEENkit";
+			};
+			name = Debug;
+		};
+		50639EDC1A92C00100A94E5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SKEENkitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SKEENkit.app/SKEENkit";
+			};
+			name = Release;
+		};
+		50639F091A92C51B00A94E5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SPReeeeEEETKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		50639F0A1A92C51B00A94E5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SPReeeeEEETKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		50639F0C1A92C51B00A94E5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SPReeeeEEETKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SPReeeeEEETKit.app/SPReeeeEEETKit";
+			};
+			name = Debug;
+		};
+		50639F0D1A92C51B00A94E5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SPReeeeEEETKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SPReeeeEEETKit.app/SPReeeeEEETKit";
+			};
+			name = Release;
+		};
+		50639F211A92C9C800A94E5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = kernal/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULE_NAME = com.rattle.kernal;
+				MODULE_START = kernal_start;
+				MODULE_STOP = kernal_stop;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		50639F221A92C9C800A94E5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = kernal/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULE_NAME = com.rattle.kernal;
+				MODULE_START = kernal_start;
+				MODULE_STOP = kernal_stop;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = kext;
 			};
 			name = Release;
 		};
@@ -723,6 +1370,7 @@
 				50639EA71A92BE4C00A94E5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50639EAB1A92BE4C00A94E5C /* Build configuration list for PBXNativeTarget "OpenGLESTests" */ = {
 			isa = XCConfigurationList;
@@ -731,6 +1379,52 @@
 				50639EA91A92BE4C00A94E5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50639ED71A92C00100A94E5C /* Build configuration list for PBXNativeTarget "SKEENkit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50639ED81A92C00100A94E5C /* Debug */,
+				50639ED91A92C00100A94E5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50639EDA1A92C00100A94E5C /* Build configuration list for PBXNativeTarget "SKEENkitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50639EDB1A92C00100A94E5C /* Debug */,
+				50639EDC1A92C00100A94E5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50639F081A92C51B00A94E5C /* Build configuration list for PBXNativeTarget "SPReeeeEEETKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50639F091A92C51B00A94E5C /* Debug */,
+				50639F0A1A92C51B00A94E5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50639F0B1A92C51B00A94E5C /* Build configuration list for PBXNativeTarget "SPReeeeEEETKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50639F0C1A92C51B00A94E5C /* Debug */,
+				50639F0D1A92C51B00A94E5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50639F201A92C9C800A94E5C /* Build configuration list for PBXNativeTarget "kernal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50639F211A92C9C800A94E5C /* Debug */,
+				50639F221A92C9C800A94E5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50DC37841A923D85006F7DFF /* Build configuration list for PBXProject "OC to Swift oGL" */ = {
 			isa = XCConfigurationList;
