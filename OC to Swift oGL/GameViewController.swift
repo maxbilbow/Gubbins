@@ -9,10 +9,12 @@
 import UIKit
 import Metal
 import QuartzCore
+import CoreMotion
 
 let MaxBuffers = 3
 let ConstantBufferSize = 1024*1024
-
+let rmxDebugger = RMXDebugger()
+let motionManager: RMXController = RMXController()
 let vertexData:[Float] =
 [
     -1.0, -1.0, 0.0, 1.0,
@@ -43,7 +45,7 @@ let vertexColorData:[Float] =
     1.0, 0.0, 0.0, 1.0
 ]
 
-class GameViewController: UIViewController {
+class GameViewController: RMXWorld {
     
     let device = { MTLCreateSystemDefaultDevice() }()
     let metalLayer = { CAMetalLayer() }()
@@ -60,12 +62,15 @@ class GameViewController: UIViewController {
     // offsets used in animation
     var xOffset:[Float] = [ -1.0, 1.0, -1.0 ]
     var yOffset:[Float] = [ 1.0, 0.0, -1.0 ]
+    var zOffset:[Float] = [ 1.0, 1.0, -1.0 ]
     var xDelta:[Float] = [ 0.002, -0.001, 0.003 ]
     var yDelta:[Float] = [ 0.001,  0.002, -0.001 ]
+    var zDelta:[Float] = [ 0.000,  0.000, -0.000 ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        motionManager.gvc = self
+        //var r: RMXSprite = RMXSprite(name:"hello")
         metalLayer.device = device
         metalLayer.pixelFormat = .BGRA8Unorm
         metalLayer.framebufferOnly = true
@@ -74,7 +79,7 @@ class GameViewController: UIViewController {
         
         view.layer.addSublayer(metalLayer)
         view.opaque = true
-        view.backgroundColor = nil
+        view.backgroundColor = UIColor.lightGrayColor()// = nil
         
         commandQueue = device.newCommandQueue()
         commandQueue.label = "main command queue"
@@ -155,7 +160,10 @@ class GameViewController: UIViewController {
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].texture = drawable.texture
         renderPassDescriptor.colorAttachments[0].loadAction = .Clear
-        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.65, green: 0.65, blue: 0.65, alpha: 1.0)
+        
+
+            renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.65, green: 0.65, blue: 0.65, alpha: 1.0)
+        
         renderPassDescriptor.colorAttachments[0].storeAction = .Store
         
         let renderEncoder = commandBuffer.renderCommandEncoderWithDescriptor(renderPassDescriptor)!
@@ -186,7 +194,8 @@ class GameViewController: UIViewController {
         commandBuffer.commit()
     }
     
-    func update() {
+    override func update() {
+        super.update()
         
         // vData is pointer to the MTLBuffer's Float data contents
         let pData = vertexBuffer.contents()
@@ -194,7 +203,16 @@ class GameViewController: UIViewController {
         
         // reset the vertices to default before adding animated offsets
         vData.initializeFrom(vertexData)
-        
+        var xx, yy, zz: Double
+        xx=0;yy=0;zz=0
+        if (motionManager.accelerometerData != nil) {
+            
+            xx = motionManager.accelerometerData.acceleration.x
+            yy = motionManager.accelerometerData.acceleration.y
+            zz = motionManager.accelerometerData.acceleration.z
+            // println("here")
+            // view.backgroundColor = UIColor.magentaColor()
+        }
         // Animate triangle offsets
         let lastTriVertex = 24
         let vertexSize = 4
@@ -206,18 +224,26 @@ class GameViewController: UIViewController {
                 xDelta[j] = -xDelta[j]
                 xOffset[j] += xDelta[j]
             }
-            
+
             yOffset[j] += yDelta[j]
-            
+
             if(yOffset[j] >= 1.0 || yOffset[j] <= -1.0) {
                 yDelta[j] = -yDelta[j]
                 yOffset[j] += yDelta[j]
             }
             
+            zOffset[j] += zDelta[j]
+//            
+            if(zOffset[j] >= 1.0 || zOffset[j] <= -1.0) {
+                zDelta[j] = -zDelta[j]
+                zOffset[j] += zDelta[j]
+            }
+            
             // Update last triangle position with updated animated offsets
             let pos = lastTriVertex + j*vertexSize
-            vData[pos] = xOffset[j]
-            vData[pos+1] = yOffset[j]
+            vData[pos] = xOffset[j].advancedBy(Float(xx))
+            vData[pos+1] = yOffset[j].advancedBy(Float(yy))
+            vData[pos+2] = zOffset[j].advancedBy(Float(zz))
         }
     }
 }

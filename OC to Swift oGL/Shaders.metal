@@ -32,3 +32,8 @@ fragment half4 passThroughFragment(VertexInOut inFrag [[stage_in]])
 {
     return half4(inFrag.color);
 };
+
+struct RMXVector4
+{
+    float4 position [[position]];
+};
