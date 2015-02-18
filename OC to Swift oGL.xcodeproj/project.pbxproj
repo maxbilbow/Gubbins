@@ -25,7 +25,6 @@
 		50639EA51A92BE4C00A94E5C /* OpenGLESTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50639EA41A92BE4C00A94E5C /* OpenGLESTests.swift */; };
 		50639EAD1A92BE7000A94E5C /* RMXSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37C11A925BFD006F7DFF /* RMXSprite.swift */; };
 		50639EAE1A92BE7400A94E5C /* RMXController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6861A9291CD00E287A8 /* RMXController.swift */; };
-		50639EAF1A92BE7400A94E5C /* RMXDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6831A928B0300E287A8 /* RMXDebugger.swift */; };
 		50639EB01A92BE7400A94E5C /* RMXMaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BF1A924D12006F7DFF /* RMXMaths.swift */; };
 		50639EB11A92BE7400A94E5C /* RMXWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37B51A9242D2006F7DFF /* RMXWorld.swift */; };
 		50639EB21A92BE7400A94E5C /* RMXParticleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BD1A924BF8006F7DFF /* RMXParticleProtocols.swift */; };
@@ -39,7 +38,6 @@
 		50639ED61A92C00100A94E5C /* SKEENkitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50639ED51A92C00100A94E5C /* SKEENkitTests.swift */; };
 		50639EDD1A92C0C900A94E5C /* RMXSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37C11A925BFD006F7DFF /* RMXSprite.swift */; };
 		50639EDE1A92C0C900A94E5C /* RMXController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6861A9291CD00E287A8 /* RMXController.swift */; };
-		50639EDF1A92C0C900A94E5C /* RMXDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6831A928B0300E287A8 /* RMXDebugger.swift */; };
 		50639EE01A92C0C900A94E5C /* RMXMaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BF1A924D12006F7DFF /* RMXMaths.swift */; };
 		50639EE11A92C0C900A94E5C /* RMXWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37B51A9242D2006F7DFF /* RMXWorld.swift */; };
 		50639EE21A92C0C900A94E5C /* RMXParticleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BD1A924BF8006F7DFF /* RMXParticleProtocols.swift */; };
@@ -54,15 +52,24 @@
 		50639F071A92C51B00A94E5C /* SPReeeeEEETKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50639F061A92C51B00A94E5C /* SPReeeeEEETKitTests.swift */; };
 		50639F0E1A92C52E00A94E5C /* RMXSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37C11A925BFD006F7DFF /* RMXSprite.swift */; };
 		50639F0F1A92C52E00A94E5C /* RMXController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6861A9291CD00E287A8 /* RMXController.swift */; };
-		50639F101A92C52E00A94E5C /* RMXDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6831A928B0300E287A8 /* RMXDebugger.swift */; };
 		50639F111A92C52E00A94E5C /* RMXMaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BF1A924D12006F7DFF /* RMXMaths.swift */; };
 		50639F121A92C52E00A94E5C /* RMXWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37B51A9242D2006F7DFF /* RMXWorld.swift */; };
 		50639F131A92C52E00A94E5C /* RMXParticleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37BD1A924BF8006F7DFF /* RMXParticleProtocols.swift */; };
 		50639F141A92C52E00A94E5C /* RMXPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37C31A926C56006F7DFF /* RMXPhysics.swift */; };
 		50639F1F1A92C9C800A94E5C /* kernal.c in Sources */ = {isa = PBXBuildFile; fileRef = 50639F1E1A92C9C800A94E5C /* kernal.c */; };
-		50BEB6841A928B0300E287A8 /* RMXDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6831A928B0300E287A8 /* RMXDebugger.swift */; };
+		50B86F181A950BE7005D453C /* libRMX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B86F0D1A950BE7005D453C /* libRMX.a */; };
+		50B86F2E1A950C30005D453C /* RMXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B86F2D1A950C30005D453C /* RMXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50B86F341A950C30005D453C /* RMXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B86F291A950C30005D453C /* RMXKit.framework */; };
+		50B86F3B1A950C30005D453C /* RMXKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B86F3A1A950C30005D453C /* RMXKitTests.swift */; };
+		50B86F441A950C65005D453C /* RMXDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6831A928B0300E287A8 /* RMXDebugger.swift */; };
+		50B86F571A951827005D453C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B86F561A951827005D453C /* UIKit.framework */; };
+		50B86F591A95182E005D453C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B86F581A95182E005D453C /* CoreMotion.framework */; };
+		50B86F5B1A951851005D453C /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B86F5A1A951851005D453C /* SceneKit.framework */; };
+		50B86F5F1A95197C005D453C /* RMXPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37C31A926C56006F7DFF /* RMXPhysics.swift */; };
+		50B86FB91A952AE9005D453C /* RMXDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6831A928B0300E287A8 /* RMXDebugger.swift */; };
 		50BEB6851A928C9000E287A8 /* RMXWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37B51A9242D2006F7DFF /* RMXWorld.swift */; };
 		50BEB6871A9291CD00E287A8 /* RMXController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BEB6861A9291CD00E287A8 /* RMXController.swift */; };
+		50D113211A947F7F00CC4FE8 /* TheAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D113201A947F7F00CC4FE8 /* TheAds.swift */; };
 		50DC378F1A923D85006F7DFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC378E1A923D85006F7DFF /* AppDelegate.swift */; };
 		50DC37911A923D85006F7DFF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37901A923D85006F7DFF /* GameViewController.swift */; };
 		50DC37931A923D85006F7DFF /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 50DC37921A923D85006F7DFF /* Shaders.metal */; };
@@ -102,6 +109,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 50639EE71A92C51B00A94E5C;
 			remoteInfo = SPReeeeEEETKit;
+		};
+		50B86F191A950BE7005D453C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50DC37811A923D85006F7DFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50B86F0C1A950BE7005D453C;
+			remoteInfo = RMX;
+		};
+		50B86F351A950C30005D453C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50DC37811A923D85006F7DFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50B86F281A950C30005D453C;
+			remoteInfo = RMXKit;
 		};
 		50DC37A11A923D85006F7DFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -153,8 +174,21 @@
 		50639F1A1A92C9C800A94E5C /* kernal.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kernal.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		50639F1D1A92C9C800A94E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50639F1E1A92C9C800A94E5C /* kernal.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kernal.c; sourceTree = "<group>"; };
+		50B86F081A94F216005D453C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = "../OC to Swift oGL/MyPlayground.playground"; sourceTree = "<group>"; };
+		50B86F0D1A950BE7005D453C /* libRMX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRMX.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		50B86F171A950BE7005D453C /* RMXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RMXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50B86F291A950C30005D453C /* RMXKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RMXKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50B86F2C1A950C30005D453C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50B86F2D1A950C30005D453C /* RMXKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMXKit.h; sourceTree = "<group>"; };
+		50B86F331A950C30005D453C /* RMXKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RMXKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50B86F391A950C30005D453C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50B86F3A1A950C30005D453C /* RMXKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMXKitTests.swift; sourceTree = "<group>"; };
+		50B86F561A951827005D453C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		50B86F581A95182E005D453C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		50B86F5A1A951851005D453C /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		50BEB6831A928B0300E287A8 /* RMXDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMXDebugger.swift; path = ../RMXDebugger.swift; sourceTree = "<group>"; };
 		50BEB6861A9291CD00E287A8 /* RMXController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMXController.swift; sourceTree = "<group>"; };
+		50D113201A947F7F00CC4FE8 /* TheAds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheAds.swift; sourceTree = "<group>"; };
 		50DC37891A923D85006F7DFF /* OC to Swift oGL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OC to Swift oGL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DC378D1A923D85006F7DFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50DC378E1A923D85006F7DFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -229,10 +263,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50B86F0A1A950BE7005D453C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50B86F141A950BE7005D453C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B86F181A950BE7005D453C /* libRMX.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50B86F251A950C30005D453C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50B86F301A950C30005D453C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B86F341A950C30005D453C /* RMXKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50DC37861A923D85006F7DFF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B86F5B1A951851005D453C /* SceneKit.framework in Frameworks */,
+				50B86F591A95182E005D453C /* CoreMotion.framework in Frameworks */,
+				50B86F571A951827005D453C /* UIKit.framework in Frameworks */,
 				50DC37BC1A924A6A006F7DFF /* GLKit.framework in Frameworks */,
 				50DC37BA1A924A62006F7DFF /* Metal.framework in Frameworks */,
 				50DC37B81A924A59006F7DFF /* QuartzCore.framework in Frameworks */,
@@ -313,6 +380,7 @@
 				50639EBF1A92C00100A94E5C /* art.scnassets */,
 				50639EC11A92C00100A94E5C /* GameViewController.swift */,
 				50639EC31A92C00100A94E5C /* Main.storyboard */,
+				50D113201A947F7F00CC4FE8 /* TheAds.swift */,
 				50639EC61A92C00100A94E5C /* Images.xcassets */,
 				50639EC81A92C00100A94E5C /* LaunchScreen.xib */,
 				50639EBB1A92C00000A94E5C /* Supporting Files */,
@@ -402,18 +470,58 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		50B86F2A1A950C30005D453C /* RMXKit */ = {
+			isa = PBXGroup;
+			children = (
+				50B86F081A94F216005D453C /* MyPlayground.playground */,
+				50B86F2D1A950C30005D453C /* RMXKit.h */,
+				50B86F2B1A950C30005D453C /* Supporting Files */,
+			);
+			path = RMXKit;
+			sourceTree = "<group>";
+		};
+		50B86F2B1A950C30005D453C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50B86F2C1A950C30005D453C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50B86F371A950C30005D453C /* RMXKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				50B86F3A1A950C30005D453C /* RMXKitTests.swift */,
+				50B86F381A950C30005D453C /* Supporting Files */,
+			);
+			path = RMXKitTests;
+			sourceTree = "<group>";
+		};
+		50B86F381A950C30005D453C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50B86F391A950C30005D453C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		50DC37801A923D85006F7DFF = {
 			isa = PBXGroup;
 			children = (
+				50B86F5A1A951851005D453C /* SceneKit.framework */,
+				50B86F581A95182E005D453C /* CoreMotion.framework */,
+				50B86F561A951827005D453C /* UIKit.framework */,
 				50DC37BB1A924A6A006F7DFF /* GLKit.framework */,
 				50DC37B91A924A62006F7DFF /* Metal.framework */,
 				50DC37B71A924A59006F7DFF /* QuartzCore.framework */,
 				50639EAC1A92BE6000A94E5C /* RMX */,
+				50639EBA1A92C00000A94E5C /* SKEENkit */,
+				50B86F2A1A950C30005D453C /* RMXKit */,
+				50B86F371A950C30005D453C /* RMXKitTests */,
 				50DC378B1A923D85006F7DFF /* OC to Swift oGL */,
 				50DC37A31A923D85006F7DFF /* OC to Swift oGLTests */,
 				50639E871A92BE4C00A94E5C /* OpenGLES */,
 				50639EA11A92BE4C00A94E5C /* OpenGLESTests */,
-				50639EBA1A92C00000A94E5C /* SKEENkit */,
 				50639ED21A92C00100A94E5C /* SKEENkitTests */,
 				50639EE91A92C51B00A94E5C /* SPReeeeEEETKit */,
 				50639F031A92C51B00A94E5C /* SPReeeeEEETKitTests */,
@@ -434,6 +542,10 @@
 				50639EE81A92C51B00A94E5C /* SPReeeeEEETKit.app */,
 				50639F001A92C51B00A94E5C /* SPReeeeEEETKitTests.xctest */,
 				50639F1A1A92C9C800A94E5C /* kernal.kext */,
+				50B86F0D1A950BE7005D453C /* libRMX.a */,
+				50B86F171A950BE7005D453C /* RMXTests.xctest */,
+				50B86F291A950C30005D453C /* RMXKit.framework */,
+				50B86F331A950C30005D453C /* RMXKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -487,6 +599,21 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50B86F0B1A950BE7005D453C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50B86F261A950C30005D453C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B86F2E1A950C30005D453C /* RMXKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +743,77 @@
 			productReference = 50639F1A1A92C9C800A94E5C /* kernal.kext */;
 			productType = "com.apple.product-type.kernel-extension";
 		};
+		50B86F0C1A950BE7005D453C /* RMX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50B86F1E1A950BE7005D453C /* Build configuration list for PBXNativeTarget "RMX" */;
+			buildPhases = (
+				50B86F091A950BE7005D453C /* Sources */,
+				50B86F0A1A950BE7005D453C /* Frameworks */,
+				50B86F0B1A950BE7005D453C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RMX;
+			productName = RMX;
+			productReference = 50B86F0D1A950BE7005D453C /* libRMX.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		50B86F161A950BE7005D453C /* RMXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50B86F211A950BE7005D453C /* Build configuration list for PBXNativeTarget "RMXTests" */;
+			buildPhases = (
+				50B86F131A950BE7005D453C /* Sources */,
+				50B86F141A950BE7005D453C /* Frameworks */,
+				50B86F151A950BE7005D453C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50B86F1A1A950BE7005D453C /* PBXTargetDependency */,
+			);
+			name = RMXTests;
+			productName = RMXTests;
+			productReference = 50B86F171A950BE7005D453C /* RMXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		50B86F281A950C30005D453C /* RMXKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50B86F3C1A950C30005D453C /* Build configuration list for PBXNativeTarget "RMXKit" */;
+			buildPhases = (
+				50B86F241A950C30005D453C /* Sources */,
+				50B86F251A950C30005D453C /* Frameworks */,
+				50B86F261A950C30005D453C /* Headers */,
+				50B86F271A950C30005D453C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RMXKit;
+			productName = RMXKit;
+			productReference = 50B86F291A950C30005D453C /* RMXKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		50B86F321A950C30005D453C /* RMXKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50B86F3F1A950C30005D453C /* Build configuration list for PBXNativeTarget "RMXKitTests" */;
+			buildPhases = (
+				50B86F2F1A950C30005D453C /* Sources */,
+				50B86F301A950C30005D453C /* Frameworks */,
+				50B86F311A950C30005D453C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50B86F361A950C30005D453C /* PBXTargetDependency */,
+			);
+			name = RMXKitTests;
+			productName = RMXKitTests;
+			productReference = 50B86F331A950C30005D453C /* RMXKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		50DC37881A923D85006F7DFF /* OC to Swift oGL */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50DC37AA1A923D85006F7DFF /* Build configuration list for PBXNativeTarget "OC to Swift oGL" */;
@@ -684,6 +882,18 @@
 					50639F191A92C9C800A94E5C = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
+					50B86F0C1A950BE7005D453C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					50B86F161A950BE7005D453C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					50B86F281A950C30005D453C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					50B86F321A950C30005D453C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 					50DC37881A923D85006F7DFF = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -715,6 +925,10 @@
 				50639EE71A92C51B00A94E5C /* SPReeeeEEETKit */,
 				50639EFF1A92C51B00A94E5C /* SPReeeeEEETKitTests */,
 				50639F191A92C9C800A94E5C /* kernal */,
+				50B86F0C1A950BE7005D453C /* RMX */,
+				50B86F161A950BE7005D453C /* RMXTests */,
+				50B86F281A950C30005D453C /* RMXKit */,
+				50B86F321A950C30005D453C /* RMXKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -782,6 +996,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50B86F151A950BE7005D453C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50B86F271A950C30005D453C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50B86F311A950C30005D453C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50DC37871A923D85006F7DFF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -809,7 +1044,6 @@
 			files = (
 				50639E911A92BE4C00A94E5C /* GameViewController.swift in Sources */,
 				50639EAE1A92BE7400A94E5C /* RMXController.swift in Sources */,
-				50639EAF1A92BE7400A94E5C /* RMXDebugger.swift in Sources */,
 				50639E8B1A92BE4C00A94E5C /* AppDelegate.swift in Sources */,
 				5017F3871A93BF6800E5BFBF /* RMXValue.swift in Sources */,
 				506022F51A9343240099950D /* RMXGyro.swift in Sources */,
@@ -833,10 +1067,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B86FB91A952AE9005D453C /* RMXDebugger.swift in Sources */,
 				50639EC21A92C00100A94E5C /* GameViewController.swift in Sources */,
 				50639EDE1A92C0C900A94E5C /* RMXController.swift in Sources */,
-				50639EDF1A92C0C900A94E5C /* RMXDebugger.swift in Sources */,
 				50639EBE1A92C00000A94E5C /* AppDelegate.swift in Sources */,
+				50D113211A947F7F00CC4FE8 /* TheAds.swift in Sources */,
 				5017F3881A93BF6800E5BFBF /* RMXValue.swift in Sources */,
 				506022F41A9343230099950D /* RMXGyro.swift in Sources */,
 				50639EE31A92C0C900A94E5C /* RMXPhysics.swift in Sources */,
@@ -861,7 +1096,6 @@
 			files = (
 				50639F121A92C52E00A94E5C /* RMXWorld.swift in Sources */,
 				50639F131A92C52E00A94E5C /* RMXParticleProtocols.swift in Sources */,
-				50639F101A92C52E00A94E5C /* RMXDebugger.swift in Sources */,
 				50639F0E1A92C52E00A94E5C /* RMXSprite.swift in Sources */,
 				50639EF11A92C51B00A94E5C /* GameScene.swift in Sources */,
 				50639EF31A92C51B00A94E5C /* GameViewController.swift in Sources */,
@@ -890,6 +1124,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		50B86F091A950BE7005D453C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50B86F131A950BE7005D453C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50B86F241A950C30005D453C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B86F5F1A95197C005D453C /* RMXPhysics.swift in Sources */,
+				50B86F441A950C65005D453C /* RMXDebugger.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50B86F2F1A950C30005D453C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B86F3B1A950C30005D453C /* RMXKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50DC37851A923D85006F7DFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -902,7 +1167,6 @@
 				50BEB6851A928C9000E287A8 /* RMXWorld.swift in Sources */,
 				50DC37B41A923E5A006F7DFF /* RattleOC.m in Sources */,
 				50DC37C41A926C56006F7DFF /* RMXPhysics.swift in Sources */,
-				50BEB6841A928B0300E287A8 /* RMXDebugger.swift in Sources */,
 				50DC37C01A924D12006F7DFF /* RMXMaths.swift in Sources */,
 				50DC37C21A925BFD006F7DFF /* RMXSprite.swift in Sources */,
 				5017F3861A93932400E5BFBF /* RMXValue.swift in Sources */,
@@ -935,6 +1199,16 @@
 			isa = PBXTargetDependency;
 			target = 50639EE71A92C51B00A94E5C /* SPReeeeEEETKit */;
 			targetProxy = 50639F011A92C51B00A94E5C /* PBXContainerItemProxy */;
+		};
+		50B86F1A1A950BE7005D453C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50B86F0C1A950BE7005D453C /* RMX */;
+			targetProxy = 50B86F191A950BE7005D453C /* PBXContainerItemProxy */;
+		};
+		50B86F361A950C30005D453C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50B86F281A950C30005D453C /* RMXKit */;
+			targetProxy = 50B86F351A950C30005D453C /* PBXContainerItemProxy */;
 		};
 		50DC37A21A923D85006F7DFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1222,6 +1496,154 @@
 			};
 			name = Release;
 		};
+		50B86F1F1A950BE7005D453C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		50B86F201A950BE7005D453C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		50B86F221A950BE7005D453C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RMXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		50B86F231A950BE7005D453C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RMXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		50B86F3D1A950C30005D453C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RMXKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		50B86F3E1A950C30005D453C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = RMXKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		50B86F401A950C30005D453C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RMXKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		50B86F411A950C30005D453C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RMXKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		50DC37A81A923D85006F7DFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1425,6 +1847,38 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		50B86F1E1A950BE7005D453C /* Build configuration list for PBXNativeTarget "RMX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50B86F1F1A950BE7005D453C /* Debug */,
+				50B86F201A950BE7005D453C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		50B86F211A950BE7005D453C /* Build configuration list for PBXNativeTarget "RMXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50B86F221A950BE7005D453C /* Debug */,
+				50B86F231A950BE7005D453C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		50B86F3C1A950C30005D453C /* Build configuration list for PBXNativeTarget "RMXKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50B86F3D1A950C30005D453C /* Debug */,
+				50B86F3E1A950C30005D453C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		50B86F3F1A950C30005D453C /* Build configuration list for PBXNativeTarget "RMXKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50B86F401A950C30005D453C /* Debug */,
+				50B86F411A950C30005D453C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		50DC37841A923D85006F7DFF /* Build configuration list for PBXProject "OC to Swift oGL" */ = {
 			isa = XCConfigurationList;

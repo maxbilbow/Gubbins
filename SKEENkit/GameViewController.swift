@@ -19,7 +19,8 @@ class GameViewController: RMXWorld , SCNSceneRendererDelegate {
 
     lazy var cameraNode = SCNNode()
     func renderer(aRenderer: SCNSceneRenderer, updateAtTime time: NSTimeInterval) {
-        (self.view as SCNView).pointOfView!.position = RMXVector3Make(self.observer!.position)
+        if ((self.observer?.position) != nil) {
+            (self.view as SCNView).pointOfView!.position = self.observer!.position
 //        cameraNode.position.x = self.observer()!.position[0]
 //        cameraNode.position.y = self.observer()!.position[1]
 //        cameraNode.position.z = self.observer()!.position[2]
@@ -28,6 +29,10 @@ class GameViewController: RMXWorld , SCNSceneRendererDelegate {
         RMXLog("--- Camera Orientation")
         RMXLog("w\(cameraNode.orientation.w.toData()), x\(cameraNode.orientation.w.toData()), y\(cameraNode.orientation.w.toData()), z\(cameraNode.orientation.w.toData())")
         self.update()
+        }
+        else {
+            RMXLog("--- Warning: observer may not be initialised")
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,6 +122,7 @@ class GameViewController: RMXWorld , SCNSceneRendererDelegate {
         
 
     }
+    
     func handleTap(gestureRecognize: UIGestureRecognizer) {
         // retrieve the SCNView
         let scnView = self.view as SCNView
@@ -152,7 +158,7 @@ class GameViewController: RMXWorld , SCNSceneRendererDelegate {
                 SCNTransaction.commit()
             } else {
                 self.observer!.stop()
-                self.observer!.position = [ 0 ,0 ,15]
+                self.observer!.position = SCNVector3Make( 0 ,0 ,15)
             }
         }
     }

@@ -1,16 +1,15 @@
 //
-//  OC_to_Swift_oGLTests.swift
-//  OC to Swift oGLTests
+//  RMXKitTests.swift
+//  RMXKitTests
 //
-//  Created by Max Bilbow on 16/02/2015.
+//  Created by Max Bilbow on 18/02/2015.
 //  Copyright (c) 2015 Rattle Media Ltd. All rights reserved.
 //
 
-import UIKit
+import Cocoa
 import XCTest
-import RMXKit 
 
-class OC_to_Swift_oGLTests: XCTestCase {
+class RMXKitTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

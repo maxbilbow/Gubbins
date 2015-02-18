@@ -25,15 +25,9 @@ extension SKNode {
     }
 }
 
-class GameViewController: RMXWorld  , SKSceneDelegate{
+class GameViewController: RMXWorld3D  , SKSceneDelegate{
 
-//    func renderer(_ aRenderer: SKSceneDelegate!, updateAtTime time: NSTimeInterval) {
-//        // per-frame code here
-//        // self.delegate =
-//        self.update()
-//        
-//        
-//    }
+
     
     func update(currentTime: NSTimeInterval, forScene scene: SKScene) {
         self.update()
@@ -77,6 +71,6 @@ class GameViewController: RMXWorld  , SKSceneDelegate{
     }
 
     override func prefersStatusBarHidden() -> Bool {
-        return true
+        return false
     }
 }
