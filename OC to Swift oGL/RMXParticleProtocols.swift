@@ -10,15 +10,15 @@ import Foundation
 import SceneKit
 
 protocol RMXNamed {
-    var name: String { get }
+    var name: String? { get }
     //init(name:String)
 }
-protocol RMXNode : RMXNamed{
-        var position: [Float] { get set }
+protocol RMXNode {
+        var positionf: [Float] { get }
         var velocity: [Float] { get set }
         func update()
 }
-protocol RMXSimpleParticle : RMXNode, RMXNamed {
+protocol RMXSimpleParticle :  RMXNamed {
     
     
     var acceleration: [Float] { get set }
@@ -47,7 +47,7 @@ protocol RMXSimpleParticle : RMXNode, RMXNamed {
 }
 
 
-protocol RMXParticle : RMXSimpleParticle , RMXNode, RMXNamed{
+protocol RMXParticle : RMXSimpleParticle , RMXNamed{
     
     var anchor: [Float] { get set }
     var origin: RMXSprite? { get }// = [[SimpleParticle alloc]init];
@@ -63,7 +63,7 @@ protocol RMXParticle : RMXSimpleParticle , RMXNode, RMXNamed{
 
 }
 
-protocol RMXObserver : RMXParticle, RMXSimpleParticle , RMXNode, RMXNamed {
+protocol RMXObserver : RMXParticle, RMXSimpleParticle , RMXNamed {
     //    - (GLKVector3)getEye;
     //    - (GLKVector3)getCenter;
     //    - (GLKVector3)getUp;
@@ -71,6 +71,9 @@ protocol RMXObserver : RMXParticle, RMXSimpleParticle , RMXNode, RMXNamed {
     var itemPosition: [Float] { get }
     var armLength: Float { get set }
     var reach: Float { get set }
+//    var eye: SCNVector3 { get }
+//    var viewTarget: SCNVector3 { get }
+//    var upVector: SCNVector3 { get set }
     
     func push(direction: [Float])
     func plusAngle(var theta: Float, var phi: Float)
@@ -79,3 +82,15 @@ protocol RMXObserver : RMXParticle, RMXSimpleParticle , RMXNode, RMXNamed {
 
 }
 
+
+protocol RMXInteface   {
+    var effectedByAccelerometer: Bool { get set }
+    //@property Mouse *mouse
+    //@property Particle * item
+    
+    var worldView: RMXWorld? { get set }
+    var frozen: Bool { get set }
+    var gyro: RMXGyro? { get set }
+    func interpretAccelerometerData()
+    func update()
+}

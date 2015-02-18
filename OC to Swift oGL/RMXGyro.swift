@@ -12,16 +12,15 @@ import SceneKit
 
 
 
-
 class RMXGyro : CMMotionManager {
     var hRotation:Float = 0.0   //Horizontal angle
     var vRotation:Float = 0.0   //Vertical rotation angle of the camera
     var cameraMovementSpeed:Float = 0.02
-    var parent: RMXSprite?
+    var parent: RMXInteface?
     var gvc: RMXWorld?
     //var attitude: CMAttitude?
 
-    init(parent: RMXSprite){//, coder aDecoder: NSCoder?) {
+    init(parent: RMXInteface){//, coder aDecoder: NSCoder?) {
         //fatalError("init(coder:) has not been implemented")
         self.parent = parent
         
@@ -39,7 +38,7 @@ class RMXGyro : CMMotionManager {
     }
 
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        RMXFatalError(sender: "init(coder:) has not been implemented")
     }
     
 
@@ -55,9 +54,9 @@ class RMXGyro : CMMotionManager {
     
     func interpretAccelerometerData(){
         if deviceMotion != nil {
-            parent!.upVector[0] = -Float(self.accelerometerData!.acceleration.x)
-            parent!.upVector[1] = -Float(self.accelerometerData!.acceleration.y)
-            parent!.upVector[2] = -Float(self.accelerometerData!.acceleration.z)
+            (parent! as RMXSprite).upVector[0] = -Float(self.accelerometerData!.acceleration.x)
+            (parent! as RMXSprite).upVector[1] = -Float(self.accelerometerData!.acceleration.y)
+            (parent! as RMXSprite).upVector[2] = -Float(self.accelerometerData!.acceleration.z)
             
             
         RMXLog("--- Accelerometer Data")
@@ -66,9 +65,9 @@ class RMXGyro : CMMotionManager {
         if self.accelerometerData? != nil {
             let dp = "04.1"
             RMXLog("Acceleration: x\(self.accelerometerData!.acceleration.x.toData()), y\(self.accelerometerData!.acceleration.y.toData()), z\(self.accelerometerData!.acceleration.z.toData())")
-            RMXLog("=> upVector: x\(parent!.upVector[0].toData(dp: dp)), y\(parent!.upVector[1].toData(dp: dp)), z\(parent!.upVector[2].toData(dp: dp))")
+            RMXLog("=> upVector: x\((parent! as RMXSprite).upVector[0].toData(dp: dp)), y\((parent! as RMXSprite).upVector[1].toData(dp: dp)), z\((parent! as RMXSprite).upVector[2].toData(dp: dp))")
         }
-        RMXLog(parent!.description)
+        RMXLog((parent! as RMXSprite).description)
     }
         
 //        if (self.attitude? != nil){// && (self.attitude?.rotationMatrix != nil) {
@@ -92,6 +91,8 @@ class RMXGyro : CMMotionManager {
         }
 
 }
+
+
 
 
 

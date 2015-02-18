@@ -39,8 +39,4 @@ class RMXController : CMMotionManager {//: UIAccelerometerDelegate {
 }
 
 
-protocol RMXInteface  {
-    var effectedByAccelerometer: Bool { get set }
-    var gyro: RMXGyro? { get set }
-    //func interpretAccelerometerData(data:CMAccelerometerData?)
-}
+

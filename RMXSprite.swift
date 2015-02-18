@@ -12,15 +12,43 @@ import CoreMotion
 
 //typealias RMXVector = Array<Float>
 //
-//extension RMXVector {
-//    
-//}
-class RMXSprite : NSObject, RMXObserver , RMXInteface{
+
+extension  RMXSprite :RMXInteface{
     
+    //func interpretAccelerometerData() { RMXFatalError("interpretAccelerometerData() has not been implemented") }
+
+    func interpretAccelerometerData() {
+        if (self.effectedByAccelerometer) && (self.gyro? != nil) {
+            if gyro?.deviceMotion != nil {
+                self.upVector[0] = -Float(self.gyro!.accelerometerData!.acceleration.x)
+                self.upVector[1] = -Float(self.gyro!.accelerometerData!.acceleration.y)
+                self.upVector[2] = -Float(self.gyro!.accelerometerData!.acceleration.z)
+                
+                
+                RMXLog("--- Accelerometer Data")
+                RMXLog("Motion: x\(gyro?.deviceMotion!.userAcceleration.x.toData()), y\(gyro?.deviceMotion!.userAcceleration.y.toData()), z\(gyro?.deviceMotion!.userAcceleration.z.toData())")
+            }
+            if gyro?.accelerometerData? != nil {
+                let dp = "04.1"
+                RMXLog("Acceleration: x\(gyro?.accelerometerData!.acceleration.x.toData()), y\(gyro?.accelerometerData!.acceleration.y.toData()), z\(gyro?.accelerometerData!.acceleration.z.toData())")
+                RMXLog("=> upVector: x\(self.upVector[0].toData(dp: dp)), y\(self.upVector[1].toData(dp: dp)), z\(self.upVector[2].toData(dp: dp))")
+            }
+            RMXLog(self.description)
+        }
+    }
+
+}
+
+class RMXSprite : SCNNode, RMXObserver , RMXNode, RMXInteface{
+    var pos: (x:Float,y:Float,z:Float) = ( x:0.0,y:0.0,z:0.0)
     var gyro: RMXGyro?
-    var effectedByAccelerometer: Bool
-    var name: String
-    var position, velocity,acceleration, forwardVector, upVector, leftVector, forwardV, upV, leftV, anchor, itemPosition: [Float]
+    var effectedByAccelerometer: Bool = false
+    //var name: String?
+    var positionf: [Float] {
+        return self.position.v
+    }
+
+    var velocity, acceleration, forwardVector, upVector, leftVector, forwardV, upV, leftV, anchor, itemPosition: [Float]
     var physics: RMXPhysics
     var accelerationRate, speedLimit,ground,rotationSpeed,jumpStrength,armLength, reach: Float
     var limitSpeed, drift: Bool
@@ -31,8 +59,7 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
     //@property Particle * item
   
     var worldView: RMXWorld?
-    required init(name: String, worldView: RMXWorld?, coder aDecoder: NSCoder? = nil) {
-        position = [ 0, 0, 15 ]
+    required init(name: String?, worldView: RMXWorld?, coder aDecoder: NSCoder? = nil) {
         //position = GLKVector3Make(0, 0, 0)
         velocity = [ 0,0,0 ]
         acceleration = [ 0, 0, 0 ]
@@ -60,33 +87,32 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
         armLength = 2
         reach = 6
         //self.ground=1
+        super.init()
         self.name = name
         self.effectedByAccelerometer = true
         self.worldView = worldView
-        super.init()
+        self.position = SCNVector3( x: 0, y: 0, z: 15 )
         self.gyro = RMXGyro(parent: self)
         
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        RMXFatalError(sender: "init(coder:) has not been implemented")
     }
     
     
     
     func accelerateForward(v: Float)
     {
-    acceleration[2] = v * accelerationRate
-    
+        acceleration[2] = v * accelerationRate
     }
     
-    func accelerateUp(v: Float)
-    {
-    acceleration[1] = v * accelerationRate
-    //  accelerate()
-    //       accelerate(GLKVector3Make(0,velocity*accelerationRate,0))
+    func accelerateUp(v: Float) {
+        acceleration[1] = v * accelerationRate
     }
 
-    func accelerateLeft(v: Float)
-    {
-    acceleration[0] = v * accelerationRate
-    //accelerate()//accelerate(GLKVector3Make(velocity*accelerationRate,0,0))
+    func accelerateLeft(v: Float) {
+        acceleration[0] = v * accelerationRate
     }
     
     
@@ -103,168 +129,117 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
     }
     }
     
-    func upStop()
-    {
-    if (!drift) {
-        acceleration[1] = 0// -velocity.y
-    //accelerate()
-    }
-    }
-    
-    func leftStop()
-    {
-    if (!drift) {
-    acceleration[0] = 0// -velocity.x
-    //accelerate()
-    }
-    
-    }
-    
-    func accelerate()
-    {
-    //acceleration.z =
-        RMXLog(self, "FV: %f, LV: %f, UV: %f")
-    acceleration[1] -= physics.gravity
-    self.setVelocity(acceleration) //Need to calculate this
-    
-    if (limitSpeed){
-        for (var i=0;i<3;++i){
-            if (velocity[i] > speedLimit){
-                //[rmxDebugger add:3 n:self.name t:[NSString stringWithFormat:@"speed%i = %f",i,[self velocity].v[i]]]
-                velocity[i] = speedLimit
-            } else if (velocity[i] < -speedLimit){
-                //[rmxDebugger add:3 n:self.name t:[NSString stringWithFormat:@"speed%i = %f",i,[self velocity].v[i]]]
-                velocity[i] = -speedLimit
-            } else {
-                RMXLog(self,"speed%i OK: %f ,i,[self velocity].v[i]")
-            }
+    func upStop()    {
+        if (!drift) {
+            acceleration[1] = 0// -velocity.y
         }
     }
     
+    func leftStop() {
+        if (!drift) {
+            acceleration[0] = 0
+        }
+    }
     
-   // [rmxDebugger add:6 n:self t:[NSString stringWithFormat:@"accZ: %f, velZ: %f",[self acceleration].z,[self velocity].z]]
+    func accelerate() {
+    //acceleration.z =
+        RMXLog(self, "FV: %f, LV: %f, UV: %f")
+        acceleration[1] -= physics.gravity
+        self.setVelocity(acceleration) //Need to calculate this
     
+        if (limitSpeed){
+            for (var i=0;i<3;++i){
+                if (velocity[i] > speedLimit){
+                    //[rmxDebugger add:3 n:self.name t:[NSString stringWithFormat:@"speed%i = %f",i,[self velocity].v[i]]]
+                    velocity[i] = speedLimit
+                } else if (velocity[i] < -speedLimit){
+                    //[rmxDebugger add:3 n:self.name t:[NSString stringWithFormat:@"speed%i = %f",i,[self velocity].v[i]]]
+                    velocity[i] = -speedLimit
+                } else {
+                    RMXLog(self,"speed%i OK: %f ,i,[self velocity].v[i]")
+                }
+            }
+        }
     
     }
     
     
-    func isDrift()->Bool
-    {
-    return !self.drift
+    func isDrift()->Bool {
+        return !self.drift
     }
     
-    func setPosition(var v: [Float])
-    {
+    func setPosition(var v: [Float]) {
         if v[1] < self.ground {
             v[1] = self.ground
         }
-        position = v
+        position = RMXVector3Make(v)
     }
     
-    
-    func isZero(v: [Float])->Bool
-    {
+    func isZero(v: [Float])->Bool {
         var zero = true
-        for value in v {
-            if value != 0 {
-                zero = false
+            for value in v {
+                if value != 0 {
+                    zero = false
             }
         }
         return zero
     }
     
-    func translate()->Bool
-    {
-        if isZero(self.velocity) {
-            return false
-        }
-        else {
-            self.setPosition(self.position + self.velocity) //Might break
-        }
-    return true
-    }
     
     func update()
     {
-        if frozen { stop(); return }
-        if (self.effectedByAccelerometer) && (self.gyro? != nil) {
-            self.gyro?.interpretAccelerometerData()
-        }
-    self.accelerate()
-    self.leftVector = RMXVector3CrossProduct(self.forwardVector,self.upVector)
+        if frozen { stop(); return } else {
+        interpretAccelerometerData()
+        self.accelerate()
+        self.leftVector = RMXVector3CrossProduct(self.forwardVector,self.upVector)
         if !self.translate() {
                 RMXLog(self,"no movement!")
         }
         self.manipulateItems()
-    //[rmxDebugger add:2 n:self.name t:[NSString stringWithFormat:@"%@ POSITION: %p | PX: %f, PY: %f, PZ: %f",self.name,[self pMem],[self position].x,[self position].y,[self position].z ]]
+        }
     }
-    
 
-    //MOVEMENT
-    
-    func stop()
-    {
-    self.setVelocity([0,0,0])
-        //setRotationalVelocity(GLKVector3Make(0,0,0))
+    func stop() {
+        self.setVelocity([0,0,0])
     }
     
-    
-    
-    func plusAngle(var theta: Float, var phi: Float)
-    {
-    theta *= GLKMathDegreesToRadians(self.rotationSpeed)
-    phi *= GLKMathDegreesToRadians(self.rotationSpeed)
-    self.rotateAroundVerticle(theta)
-    self.rotateAroundHorizontal(phi)
-    //[rmxDebugger add:2 n:self.name t:[NSString stringWithFormat:@"plusAngle: THETA %f, PHY: %f",theta,phi]]
+    func plusAngle(var theta: Float, var phi: Float) {
+        theta *= GLKMathDegreesToRadians(self.rotationSpeed)
+        phi *= GLKMathDegreesToRadians(self.rotationSpeed)
+        self.rotateAroundVerticle(theta)
+        self.rotateAroundHorizontal(phi)
     }
     
     func rotateAroundVerticle(theta:Float) {
         var rm = RMXMatrix4MakeRotation(theta, self.upVector[0], self.upVector[1], self.upVector[2])
-        
-        
-    //GLKMatrix4RotateWithVector3(GLKMatrix4MakeYRotation(theta), theta, getUpVector())
-    self.forwardVector=RMXMatrix4MultiplyVector3WithTranslation(rm, self.forwardVector)
-    //leftVector = GLKMatrix4MultiplyVector3WithTranslation(rm, leftVector)
-    //free(rm)
-    }
-    func rotateAroundHorizontal(phi:Float){
-    // leftVector = GLKVector3CrossProduct(getForwardVector(), getUpVector()) // Set the Right Vector
-       var rm = RMXMatrix4MakeRotation(phi,self.leftVector[0], self.leftVector[1], self.leftVector[2])
-    
         self.forwardVector=RMXMatrix4MultiplyVector3WithTranslation(rm, self.forwardVector)
-    
     }
     
-    func setVelocity(acceleration:[Float])
-    {
+    func rotateAroundHorizontal(phi:Float){
+        var rm = RMXMatrix4MakeRotation(phi,self.leftVector[0], self.leftVector[1], self.leftVector[2])
+        self.forwardVector=RMXMatrix4MultiplyVector3WithTranslation(rm, self.forwardVector)
+    }
+    
+    func setVelocity(acceleration:[Float]) {
         var forward = acceleration[2]
         var left = -acceleration[0]
         var up = acceleration[1]
-       // [rmxDebugger add:1 n:self.name t:[NSString stringWithFormat:@"FV: %f, LV: %f, UV: %f",forward,left,up]]
         self.forwardV = self.forwardVector * forward
-        //forwardV = GLKVector3DivideScalar(forwardV, physics.friction)
         self.upV = self.upVector * up
         self.leftV = self.leftVector * left
-        // GLKVector3 tm = GLKVector3Project(acceleration, forwardVector)
-        //GLKVector3 tm
-        
         self.velocity += self.forwardV + self.leftV
         self.velocity /= self.physics.getFriction()
         self.velocity += self.upV
-    
     }
     
 
     
     
-    func addGravity(g:Float)
-    {
+    func addGravity(g:Float){
         self.physics.addGravity(g)
     }
     
-    func toggleGravity()
-    {
+    func toggleGravity(){
         self.physics.toggleGravity()
     }
     
@@ -273,32 +248,32 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
     }
     
     func isGrounded()->Bool{
-    return self.position[1] == self.ground
+        return self.positionf[1] == self.ground
     }
     
-    func push(direction:[Float])
-    {
+    func push(direction:[Float]) {
         self.setVelocity(self.velocity+direction)
     }
     
     
     
     
-    func getEye()->[Float]
-    {
-    return self.position
+    func getEye()->[Float] {
+        return self.positionf
     }
     
-    func getCenter()->[Float]
-    {
-        return self.position + self.forwardVector
+    func getCenter()->[Float] {
+        return self.positionf + self.forwardVector
     }
     
-    func getUp()->[Float]
-    {
+    func getUp()->[Float] {
         return self.upVector
     }
 
+   
+    
+    var viewTarget: SCNVector3? { return RMXVector3Make(self.positionf + self.forwardVector) }
+    //var upView: SCNVector3? { return RMXVector3Make(self.upVector) }
     
     
     func jump() {
@@ -307,17 +282,7 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
         }
     }
     
-    func grabObject(i: RMXSprite)
-    {
-        if (self.itemInHand == i||RMXVectorDistance(self.position, i.position)>self.reach) {
-            self.releaseObject()
-        } else {
-            self.itemInHand = i
-            itemPosition = i.position
-            armLength = RMXVectorDistance(self.getCenter(), itemPosition)
-        }
     
-    }
     
     func releaseObject() {
     //origin.setPosition(anchor->getCenter())
@@ -326,7 +291,7 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
     
     func manipulateItems() {
     //item->setAnchor(this->getPosition())
-        itemInHand?.position = self.getCenter()+(self.forwardVector*self.armLength)
+        itemInHand?.position = RMXVector3Make(self.getCenter()+(self.forwardVector*self.armLength))
     }
     
     func extendArmLength(i: Float) {
@@ -339,11 +304,11 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
    override var description: String {
         if (RMX.debugging) {
             let dp:String = "03.0"
-            RMXLog("--- SPRITE DATA",
-                "      EYE: x\(getEye()[0].toData(dp: dp)), y\(getEye()[1].toData(dp: dp)), z\(getEye()[2].toData(dp: dp))",
-                "   CENTRE: x\(getCenter()[0].toData(dp: dp)), y\(getCenter()[1].toData(dp: dp)), z\(getCenter()[2].toData(dp: dp))",
-                "       UP: x\(getUp()[0].toData(dp: dp)), y\(getUp()[1].toData(dp: dp)), z\(getUp()[2].toData(dp: dp))"
-            )
+            RMXLog("--- SPRITE DATA")
+            RMXLog("      EYE: x\(getEye()[0].toData(dp: dp)), y\(getEye()[1].toData(dp: dp)), z\(getEye()[2].toData(dp: dp))")
+            RMXLog("   CENTRE: x\(getCenter()[0].toData(dp: dp)), y\(getCenter()[1].toData(dp: dp)), z\(getCenter()[2].toData(dp: dp))")
+            RMXLog("       UP: x\(getUp()[0].toData(dp: dp)), y\(getUp()[1].toData(dp: dp)), z\(getUp()[2].toData(dp: dp))")
+            
             return ""
         }
     
@@ -351,14 +316,30 @@ class RMXSprite : NSObject, RMXObserver , RMXInteface{
     }
 
     
-    func setEffectedByAccelerometer(set: Bool=true){
-        self.effectedByAccelerometer=set
+    
+    
+    //func translate()->Bool { RMXFatalError("translate() has not been implemented"); return false    } override
+    func translate()->Bool
+    {
+        if isZero(self.velocity) {
+            return false
+        }
+        else {
+            self.setPosition(self.positionf + self.velocity) //Might break
+        }
+        return true
     }
-    
-    func isEffectedByAccelerometer() -> Bool{
-        return self.effectedByAccelerometer
+//    func grabObject(i: RMXSprite) {};
+    func grabObject(i: RMXSprite)
+    {
+        if (self.itemInHand == i||RMXVectorDistance(self.positionf, i.positionf)>self.reach) {
+            self.releaseObject()
+        } else {
+            self.itemInHand = i
+            itemPosition = i.positionf
+            armLength = RMXVectorDistance(self.getCenter(), itemPosition)
+        }
+        
     }
-    
-    
     
 }

@@ -10,6 +10,17 @@ import Foundation
 //import Metal
 import SceneKit
 
+extension  SCNVector3 {
+    var v: [Float] {
+        return [ x , y , z ]
+    }
+}
+
+extension  SCNVector4 {
+    var v: [Float] {
+        return [ x , y , z, w ]
+    }
+}
 
 //var rm: [[Float]] = RMXMatrix4MakeRotation(phi,self.leftVector[0], self.leftVector[1], self.leftVector[2])
 
@@ -225,3 +236,16 @@ func RMXVector3Make(v: [Float]) -> SCNVector3{
     return SCNVector3Make(v[0], v[1], v[2])
 }
 
+func RMXVector3Make(v: (x:Float,y:Float,z:Float))->SCNVector3{
+    return SCNVector3Make(Float(v.x), Float(v.y), Float(v.z))
+}
+func RMXVector3Make(v: (x:Int,y:Int,z:Int))->SCNVector3{
+    var s:SCNVector3 = SCNVector3(x: 0,y: 0,z: 0)
+    var p:(x:Float,y:Float,z:Float) = (1,1,1)
+    //SCNVector3EqualToVector3(SCNVector3(p), s)
+    return SCNVector3Make(Float(v.x), Float(v.y), Float(v.z))
+}
+
+func RMXVector3Make(v: (x:Double,y:Double,z:Double))->SCNVector3{
+    return SCNVector3Make(Float(v.x), Float(v.y), Float(v.z))
+}

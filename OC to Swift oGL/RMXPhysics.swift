@@ -8,14 +8,14 @@
 
 import Foundation
 
-class RMXPhysics : RMXNamed {
+class RMXPhysics {//: RMXNamed {
 
-    var name: String
+    var name: String?
     var gravity, friction: Float
     let U_GRAVITY: Float = (0.01/50)
     let U_FRICTION: Float = 1.1
 
-    required init(name:String){
+    init(name:String?){
         self.name = name
         gravity = U_GRAVITY
         friction = U_FRICTION

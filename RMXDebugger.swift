@@ -15,7 +15,7 @@ import Foundation
 //    //class func debug(key: String, message: String)
 //    
 //}
-struct RMX  {
+public struct RMX  {
     //let tester: UnsafeMutablePointer<RMX.Debugger> = UnsafeMutablePointer.alloc(sizeof(RMX.Debugger.self))
     
     static var tog = 0
@@ -104,16 +104,46 @@ struct RMX  {
         NSLog(output)
         logs.removeAll(keepCapacity: true)
     }
-}
-
-func RMXLog(logs: String...) {
-    for log in logs {
-        RMX.log(log)
+    
+    static func makeData(file: String = __FILE__, funcName: String = __FUNCTION__, line: Int = __LINE__, col: Int = __COLUMN__, args: String?...) -> String{
+        
+        var result: String =  args.isEmpty ? "" : "|| INFO "//\(args!)"
+        for arg in args {
+            result += "- \(arg)"
+        }
+        for data in args {
+            result += "::"
+        }
+        
+        return " => \(funcName) in \(file.lastPathComponent) on line: \(line):\(col)\(result)"
     }
 }
 
-func RMXLog(object: RMXNamed, message: String...) {
-    for log in message {
-        RMX.add(object.name, message: log)
+public func RMXLog(var logs: String, file: String = __FILE__, funcName: String = __FUNCTION__, line: Int = __LINE__, column: Int = __COLUMN__) {
+    //for log in logs
+    if logs.hasPrefix("---") {
+        logs += RMX.makeData(file: file,funcName: funcName, line: line, col: column)
     }
+    RMX.log(logs)
+    RMXFatalError()
 }
+
+public func RMXLog(object: AnyObject, var message: String, file: String = __FILE__,  funcName: String = __FUNCTION__, line: Int = __LINE__,  column: Int = __COLUMN__) {
+    //for log in message {
+    if message.hasPrefix("---") {
+        message += RMX.makeData(file: file,funcName: funcName, line: line, col: column)
+    }
+    RMX.add(object.description != nil ? object.name! : object.description , message: message)
+    //}
+}
+
+@noreturn func RMXFatalError(sender: AnyObject = "", file: String = __FILE__, funcName: String = __FUNCTION__, line: Int = __LINE__, col: Int = __COLUMN__) {
+    let error = RMX.makeData(file: file,funcName: funcName, line: line, col: col)
+    var underline = "\n"
+    for c in error {
+        underline += "-"
+    }
+    fatalError("\n --- RMXFatalError --- ... \"\(sender.description)\"\n\(error)\n\(underline)\n")
+}
+
+//@noreturn func fatalError(_ message: @autoclosure () -> String = default, file: StaticString = default, line: UWord = default)

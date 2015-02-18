@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import SceneKit
 
 class RMXValue<T: Comparable> {
    // var n: NSValue = 0
@@ -67,4 +67,9 @@ extension Double {
     func toData(dp:String="05.2") -> String {
         return RMXValue.toData(self, dp: dp)
     }
+    
+//    var cgFloat: CGFloat {
+//        let f: CGFloat(self)
+//        return f
+//    }
 }
